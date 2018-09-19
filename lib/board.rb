@@ -1,3 +1,5 @@
+require 'matrix'
+
 class Matrix
     def []=(i, j, x)
       @rows[i][j] = x
@@ -10,7 +12,7 @@ class Board
 
     def initialize
         i=1
-        self.grid = Matrix.build(3){nil}
+        @grid = Matrix.build(3){nil}
     end
     # It could be false when any player wins or when the board is full
     def continue?

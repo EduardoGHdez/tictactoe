@@ -6,6 +6,7 @@ Gem::Specification.new do |s|
     s.description   = "With this gem, you can have an Object tic tac toe and play with other user"
     s.authors       = ["Eduardo Hernandez"]
     s.email         = 'egh1795@gmail.com'
-    s.files         = ["Rakefile", "README", "lib/board.rb", "lib/tictactoe.rb", "lib/player.rb"]
+    s.files         = ["Gemfile", "Gemfile.lock", "README", "lib/board.rb", "lib/tictactoe.rb", "lib/player.rb"]
     s.license       = 'MIT'
+    s.homepage      = 'https://github.com/EduardoGHdez/tictactoe'
 end

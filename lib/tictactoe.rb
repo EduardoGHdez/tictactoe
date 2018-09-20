@@ -1,7 +1,7 @@
 require_relative 'player'
 require_relative 'board'
 
-class TicTacToe
+class TicTacToe        
 
     def initialize
         @players = [Player.new(type:"X", player_number:1), Player.new(type:"O", player_number:2)]
@@ -12,17 +12,17 @@ class TicTacToe
 
     def play
         turn = 0
-        while @board.continue? do            
+        while !@board.is_full? do            
             if @board.mark_square(player: @players[turn%2])                
-                if @board.three_in_a_row?(player: @players[turn%2])
-                    puts "#{@players[turn%2].name} wins"
+                if @board.three_in_line?(current_player: @players[turn%2])                
                     @board.disp                          
-                    break
+                    return "\n\n#{@players[turn%2].name} wins!!\n\n"
                 end
                 @board.disp      
                 turn += 1
-            end                              
+            end                                          
         end
+        return puts "\n\n TIE!! \n\n"
     end
     
     def show_instructions
@@ -41,6 +41,11 @@ class TicTacToe
             end            
         end            
         print "\n"
-    end    
+    end 
+    
+    def players
+        @players
+    end
 end
+
 
